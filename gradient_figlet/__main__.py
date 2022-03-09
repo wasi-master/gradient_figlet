@@ -22,7 +22,7 @@ parser.add_argument("-p", "--pager", help="Whether to use a pager or not", actio
 parser.add_argument("-d", "--direction", help="`left-to-right` makes the output flush-left.  `right-to-left` makes it flush-right. Left-to-right text will be flush-left, while right-to-left text will be flush-right. `auto` (default) sets it according to whether left-to-right or right-to-left font is selected.")
 parser.add_argument("-j", "--justify", help="These option handles the justification  of FIGlet output. `center` centers the output horizontally. `auto` (default) sets the justification according to whether left-to-right or right-to-left text is selected.  (Left-to-right versus right-to-left text is controlled by -d)")
 parser.add_argument("-w", "--width", help="How long is the terminal in width", type=int, default=terminal_size[0])
-parser.add_argument("-html", "--save-html", help="Whether to also save the output in HTML format", action="store_true", default=terminal_size[0])
+parser.add_argument("-html", "--save-html", help="Whether to also save the output in HTML format", action="store_true", default=False)
 args = parser.parse_args()
 
 if args.all_fonts:

@@ -1,6 +1,9 @@
-# gradient_figlet
+![](https://raw.githubusercontent.com/wasi-master/gradient_figlet/main/banner.png)
+
+<div align="center"> <h1 align="center"> Gradient Figlet </h1>
 
 A CLI that prints (optionally outputs html) gradient figlets using [rich](https://github.com/Textualize/rich "Rich is a Python library for rich text and beautiful formatting in the terminal.") and [pyfiglet](https://github.com/pwaller/pyfiglet "An implementation of figlet written in Python.")
+ </div>
 
 ## Usage
 
