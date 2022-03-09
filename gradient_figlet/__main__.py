@@ -2,6 +2,7 @@
 Generate cool looking gradient figlets and print them to the terminal
 """
 import random
+import shutil
 from argparse import ArgumentParser
 
 from colour import Color, rgb2hex
@@ -10,12 +11,17 @@ from pyfiglet import Figlet, FigletFont, figlet_format
 
 from .pleasing_items import good_gradients, good_fonts
 
+terminal_size = shutil.get_terminal_size((80, 20))
+
 parser = ArgumentParser(prog="gradient_figlet",description=__doc__)
 parser.add_argument("text", help="The text to print")
 parser.add_argument("-c", "--color", help="The colors for the gradient (comma seperated hex codes)", default=",".join(random.choice(list(good_gradients.values()))))
 parser.add_argument("-f", "--font", help="The font for the figlet (font supported by pyfiglet)", default=random.choice(good_fonts))
 parser.add_argument("-F", "--all-fonts", help="Shows all the available fonts", action="store_true")
 parser.add_argument("-p", "--pager", help="Whether to use a pager or not", action="store_true")
+parser.add_argument("-d", "--direction", help="`left-to-right` makes the output flush-left.  `right-to-left` makes it flush-right. Left-to-right text will be flush-left, while right-to-left text will be flush-right. `auto` (default) sets it according to whether left-to-right or right-to-left font is selected.")
+parser.add_argument("-j", "--justify", help="These option handles the justification  of FIGlet output. `center` centers the output horizontally. `auto` (default) sets the justification according to whether left-to-right or right-to-left text is selected.  (Left-to-right versus right-to-left text is controlled by -d)", action="store_true")
+parser.add_argument("-w", "--width", help="How long is the terminal in width", action="store_true", default=terminal_size[0])
 args = parser.parse_args()
 
 if args.all_fonts:
@@ -70,7 +76,7 @@ if args.all_fonts:
     exit(0)
 
 colors = [Color(h) for h in args.color.split(",")]
-f = Figlet(font=args.font)
+f = Figlet(font=args.font, direction=args.direction, justify=args.justify, width=args.width)
 
 get_contrasting_color = lambda x: f"{Color(f'{rgb2hex(tuple(0 if c > 0.5 else 1 for c in x.rgb))}').hex_l}"
 

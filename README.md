@@ -4,9 +4,9 @@ Prints gradient figlets using [rich](https://github.com/Textualize/rich "Rich is
 
 ## Screenshots
 
-![image_1](./screenshots/image_1.png)
-![image_2](./screenshots/image_2.png)
-![image_3](./screenshots/image_3.png)
-![image_4](./screenshots/image_4.png)
-![image_5](./screenshots/image_5.png)
-![image_6](./screenshots/image_6.png)
+![image_1](https://raw.githubusercontent.com/wasi-master/gradient_figlet/main/screenshots/image_1.png)
+![image_2](https://raw.githubusercontent.com/wasi-master/gradient_figlet/main/screenshots/image_2.png)
+![image_3](https://raw.githubusercontent.com/wasi-master/gradient_figlet/main/screenshots/image_3.png)
+![image_4](https://raw.githubusercontent.com/wasi-master/gradient_figlet/main/screenshots/image_4.png)
+![image_5](https://raw.githubusercontent.com/wasi-master/gradient_figlet/main/screenshots/image_5.png)
+![image_6](https://raw.githubusercontent.com/wasi-master/gradient_figlet/main/screenshots/image_6.png)

@@ -6,4 +6,15 @@
 
 ## Version 0.2.0
 
-- Initial Release
+- Bug fixes and stability improvements
+
+## Version 0.2.1
+
+- Fix screenshot links
+
+## Version 0.3.0
+
+- Add new `direction` parameter
+- Add new `justify` parameter
+- Add new `width` parameter
+- Make the figlet text be printed according to the terminal width instead of a constant width
