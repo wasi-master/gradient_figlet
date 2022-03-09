@@ -27,3 +27,17 @@
 ## Version 0.4.1
 
 - Fix the html parameter being true by default
+
+## Version 0.4.2
+
+- Add a banner
+
+## Version 0.4.3
+
+- Switch to click and use rich-click
+
+## Version 0.4.4
+
+- Use custom formatting with rich-click
+- Fix the all-fonts param not working
+- Make all-fonts show contrasing colors for hex codes
