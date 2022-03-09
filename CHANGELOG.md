@@ -18,3 +18,12 @@
 - Add new `justify` parameter
 - Add new `width` parameter
 - Make the figlet text be printed according to the terminal width instead of a constant width
+
+## version 0.4.0
+
+- Fix bugs with the 3 parameters added in 0.3.0
+- Add a `html` parameter
+
+## Version 0.4.1
+
+- Fix the html parameter being true by default

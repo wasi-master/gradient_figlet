@@ -1,6 +1,22 @@
 # gradient_figlet
 
-Prints gradient figlets using [rich](https://github.com/Textualize/rich "Rich is a Python library for rich text and beautiful formatting in the terminal.") and [pyfiglet](https://github.com/pwaller/pyfiglet "An implementation of figlet written in Python.")
+A CLI that prints (optionally outputs html) gradient figlets using [rich](https://github.com/Textualize/rich "Rich is a Python library for rich text and beautiful formatting in the terminal.") and [pyfiglet](https://github.com/pwaller/pyfiglet "An implementation of figlet written in Python.")
+
+## Usage
+
+To get all the information about the parameters, run the following command:
+
+```sh
+python -m gradient_figlet -h
+```
+
+To just test out the tool with some pre determined pleasant parameters, run the following command:
+
+```sh
+python -m gradient_figlet YOUR_TEXT
+```
+
+And change YOUR_TEXT to something else that you want.
 
 ## Screenshots
 
