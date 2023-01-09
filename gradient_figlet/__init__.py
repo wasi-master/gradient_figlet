@@ -26,7 +26,7 @@ rgb = lambda r, g, b: (r, g, b)
 
 __all__ = ("print_with_gradient", "make_gradient")
 __author__ = "Wasi Master"
-__version__ = "0.4.3"
+__version__ = "0.4.4"
 
 console = Console(record=True)
 DRACULA_TERMINAL_THEME = TerminalTheme(
