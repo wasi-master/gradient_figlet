@@ -6,8 +6,7 @@ import shutil
 
 import rich_click as click
 from colour import Color, rgb2hex
-from gradient_figlet import rich, print_with_gradient
-from pyfiglet import Figlet, FigletFont, figlet_format
+from gradient_figlet import rich, print_with_gradient, print_with_gradient_figlet
 
 from .pleasing_items import good_gradients, good_fonts
 
@@ -77,12 +76,17 @@ def cli(text, color, font, all_fonts, pager, direction, justify, width, save_htm
             )
         exit(0)
 
-    colors = [Color(h) for h in color.split(",")]
-    f = Figlet(font=font, direction=direction, justify=justify, width=width)
 
     get_contrasting_color = lambda x: f"{Color(f'{rgb2hex(tuple(0 if c > 0.5 else 1 for c in x.rgb))}').hex_l}"
 
-    print_with_gradient(f.renderText(text), *colors, also_to_html=save_html, original_text=text)
+
+    colors = [Color(h) for h in color.split(",")]
+    if len(colors) > 2:
+        print("You may not use more than two colors")
+        raise click.Abort()
+
+    print_with_gradient_figlet(text, font=font, color1=colors[0], color2=colors[1], direction=direction, justify=justify, width=width, save_html=save_html)
+
     rich.print(f"Font Used: [green]{font}[/]")
     rich.print(f"Gradient Used: {' -> '.join(map(lambda x: f'[{get_contrasting_color(x)} on {x.hex_l}]{x.hex_l}[/]', colors))}")
 

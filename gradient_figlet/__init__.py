@@ -1,10 +1,13 @@
+from typing import List, Union
 import unicodedata
 import re
+import shutil
 
 import rich
 from rich.console import Console
 from rich.terminal_theme import TerminalTheme
 from colour import Color
+from pyfiglet import Figlet, FigletFont, figlet_format
 
 def slugify(value, allow_unicode=False):
     """
@@ -23,6 +26,8 @@ def slugify(value, allow_unicode=False):
     return re.sub(r'[-\s]+', '-', value).strip('-_')
 
 rgb = lambda r, g, b: (r, g, b)
+terminal_size = shutil.get_terminal_size((80, 20))
+
 
 __all__ = ("print_with_gradient", "make_gradient")
 __author__ = "Wasi Master"
@@ -57,6 +62,14 @@ DRACULA_TERMINAL_THEME = TerminalTheme(
 def print_with_gradient(text: str, color1: Color, color2: Color, also_to_html=False, original_text=None) -> None:
     lines = text.splitlines()
     for c, l in zip(color1.range_to(color2, len(lines)), lines):
-        console.print(f"[{c.hex_l}]{l}[/]")
+        console.print(f"[{c.hex_l}]{l}")
     if also_to_html:
         console.save_html(slugify(original_text if original_text else "output") + ".html", theme=DRACULA_TERMINAL_THEME)
+
+def print_with_gradient_figlet(text: str, font: str, color1: Union[Color, str], color2: Union[Color, str], direction="auto", justify="auto", width=terminal_size[0], save_html=False):
+    if not isinstance(color1, Color):
+        color1 = Color(color1)
+    if not isinstance(color2, Color):
+        color2 = Color(color2)
+    f = Figlet(font=font, direction=direction, justify=justify, width=width)
+    print_with_gradient(f.renderText(text), color1, color2, also_to_html=save_html, original_text=text)
