@@ -31,7 +31,7 @@ terminal_size = shutil.get_terminal_size((80, 20))
 
 __all__ = ("print_with_gradient", "make_gradient")
 __author__ = "Wasi Master"
-__version__ = "0.4.4"
+__version__ = "0.5.0"
 
 console = Console(record=True)
 DRACULA_TERMINAL_THEME = TerminalTheme(

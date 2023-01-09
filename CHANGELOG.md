@@ -39,5 +39,9 @@
 ## Version 0.4.4
 
 - Use custom formatting with rich-click
-- Fix the all-fonts param not working
-- Make all-fonts show contrasing colors for hex codes
+- Fix the all-fonts parameter not working
+- Make all-fonts show contrasting colors for hex codes
+
+## Version 0.5.0
+
+- Make it easier to use the library directly in a script
