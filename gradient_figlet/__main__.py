@@ -16,14 +16,14 @@ click.rich_click.USE_RICH_MARKUP = True
 
 @click.command(context_settings=dict(help_option_names=['-h', '--help']))
 @click.argument("text")
-@click.option("-c", "--color", help="The [red]c[yellow]o[green]l[cyan]o[magenta]r[blue]s[/][default on default] for the [/][#43cea2]g[#00c3aa]r[#00b8b1]a[#00acb7]d[#009fba]i[#0092bb]e[#0077b3]n[#0069a9]t[/][default on default] [b](comma seperated hex codes)[/]", default=",".join(random.choice(list(good_gradients.values()))))
-@click.option("-f", "--font", help="The font for the figlet [b](has to be a font supported by pyfiglet)[/]", default=random.choice(good_fonts))
-@click.option("-F", "--all-fonts", help="Shows all the available fonts", is_flag=True)
-@click.option("-p", "--pager", help="Whether to use a pager or not", is_flag=True)
-@click.option("-d", "--direction", help="`left-to-right` makes the output flush-left.  `right-to-left` makes it flush-right. Left-to-right text will be flush-left, while right-to-left text will be flush-right. `auto` (default) sets it according to whether left-to-right or right-to-left font is selected.")
-@click.option("-j", "--justify", help="These option handles the justification  of FIGlet output. `center` centers the output horizontally. `auto` (default) sets the justification according to whether left-to-right or right-to-left text is selected.  (Left-to-right versus right-to-left text is controlled by -d)")
+@click.option("-c", "--color", help="The [red]c[yellow]o[green]l[cyan]o[magenta]r[blue]s[/][default on default] for the [/][#43cea2]g[#00c3aa]r[#00b8b1]a[#00acb7]d[#009fba]i[#0092bb]e[#0077b3]n[#0069a9]t[/][default on default] [b](comma seperated hexadecimal color codes)[/]", default=",".join(random.choice(list(good_gradients.values()))))
+@click.option("-f", "--font", help="The [black on #96ff00]f[black on #bffb00]o[black on #e2f600]n[black on #fff000]t[/][default on default] for the [#ff009c]f[#eb009d]i[#d6009e]g[#cb009e]l[#b5009d]e[#9e009b]t[/] [b default on default](has to be a font supported by pyfiglet)[/]", default=random.choice(good_fonts))
+@click.option("-F", "--all-fonts", help="Shows [#00eaff][/][#00e5ff]a[/][#00e0ff]l[/][#00daff]l[/][#00d5ff] [/][#00d0ff]t[/][#00cbff]h[/][#00c5ff]e[/][#00c0ff] [/][#00bbff]a[/][#00b6ff]v[/][#00b1ff]a[/][#00abff]i[/][#00a6ff]l[/][#00a1ff]a[/][#009cff]b[/][#0097ff]l[/][#0091ff]e[/][#008cff] [/][#0087ff]f[/][#0082ff]o[/][#007cff]n[/][#0077ff]t[/][#0072ff]s[/]", is_flag=True)
+@click.option("-p", "--pager", help="Whether to use a [green]pager[/] or not", is_flag=True)
+@click.option("-d", "--direction", help="[yellow on #000000]left-to-right[/] makes the output flush-left.  [yellow on #000000]right-to-left[/] makes it flush-right. Left-to-right text will be flush-left, while right-to-left text will be flush-right. [yellow on #000000]auto[/] (default) sets it according to whether [yellow on #000000]left-to-right[/] or [yellow on #000000]right-to-left[/] font is selected.")
+@click.option("-j", "--justify", help="These option handles the justification  of FIGlet output. [yellow on #000000]center[/] centers the output horizontally. [yellow on #000000]auto[/] (default) sets the justification according to whether [yellow on #000000]left-to-right[/] or [yellow on #000000]right-to-left[/] text is selected.  (Left-to-right versus right-to-left text is controlled by -d)")
 @click.option("-w", "--width", help="How long is the terminal in width", type=int, default=terminal_size[0])
-@click.option("-html/-no-html", "--save-html/--no-save-html", help="Whether to also save the output in HTML format", default=False)
+@click.option("-html/-no-html", "--save-html/--no-save-html", help="Whether to also save the output in HTML format, The [magenta]file name[/] is a slugified version of the text", default=False)
 def cli(text, color, font, all_fonts, pager, direction, justify, width, save_html):
     if all_fonts:
         from rich.console import Console
