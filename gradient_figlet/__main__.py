@@ -6,6 +6,8 @@ import shutil
 
 import rich_click as click
 from colour import Color, rgb2hex
+from pyfiglet import FigletFont, figlet_format
+
 from gradient_figlet import rich, print_with_gradient, print_with_gradient_figlet
 
 from .pleasing_items import good_gradients, good_fonts
