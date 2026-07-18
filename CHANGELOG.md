@@ -45,3 +45,17 @@
 ## Version 0.5.0
 
 - Make it easier to use the library directly in a script
+
+## Version 0.6.0
+
+- Fix the `--all-fonts` flag crashing due to missing imports
+- Fix passing a single color crashing, it now auto-generates a matching second shade
+- Fix `--direction` and `--justify` defaulting to `None` instead of `auto`
+- Add the missing `pyfiglet` dependency to the package metadata
+- Add a `gradient-figlet` console command (no more need for `python -m`)
+- Add `make_gradient`, `make_gradient_figlet` and `interpolate_colors` to the library API
+- Support gradients with more than two colors (multi-stop gradients)
+- Add a `--gradient`/`-g` option to use a built-in named gradient
+- Add `--list-gradients` and `--list-fonts` options
+- Add tests and a demo script
+- Document all CLI options and the library API in the README
